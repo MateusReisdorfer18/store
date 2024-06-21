@@ -1,0 +1,27 @@
+header {
+    background-color: #04345aff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-li:hover, .nav-btn:hover {
+    transition: .2s;
+    background-color: #04345aff;
+} 
+
+.img-perfil {
+    background-color: #fff;
+    padding: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.dots {
+    cursor: pointer;
+}
+
+.main-nav {
+    background-color: #0063a7ff;
+}

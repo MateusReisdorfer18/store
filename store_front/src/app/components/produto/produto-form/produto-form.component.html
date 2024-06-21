@@ -1,0 +1,32 @@
+<div class="col-xl-12 border py-5 px-3 vh-100 container-fluid p-0">
+    <h2 class="fw-bold ps-3 py-2">Módulo de Produto</h2>
+    <form class="col-xl-12 px-3 mt-4 d-flex align-items-center flex-column row gy-2">
+        <div class="col-xl-6">
+            <label for="nome" class="fs-3 text-start d-block">Nome</label>
+            <input type="text" class="col-xl-12 rounded p-2 border" placeholder="Digite o nome do produto" id="nome"
+                name="nome" [(ngModel)]="this.produto.nome">
+        </div>
+        <div class="col-xl-6">
+            <label for="preco" class="fs-3 d-block">Preço</label>
+            <input type="number" class="col-xl-12 rounded p-2 border" placeholder="Digite o preço do produto" id="preco"
+                name="preco" [(ngModel)]="this.produto.preco">
+        </div>
+        <div class="col-xl-6">
+            <label for="quantidade" class="fs-3 d-block">Quantidade</label>
+            <input type="number" class="col-xl-12 p-2 rounded border"
+                placeholder="Digite a quantidade disponivel do produto" id="quantidade" name="quantidade"
+                [(ngModel)]="this.produto.quantidade">
+        </div>
+        <div class="col-xl-6">
+            <label for="categoria" class="fs-3 d-block">Categoria</label>
+            <select class="rounded col-xl-12 p-2 border" aria-label="Default select example" id="categoria"
+                name="categoria" [(ngModel)]="this.produto.categoria">
+                <option *ngFor="let categoria of this.categorias" [ngValue]="categoria">{{ this.categoria.nome }}</option>
+            </select>
+        </div>
+        <div class="col-xl-6 mt-3">
+            <button class="btn btn-lg btn-primary col-12"
+                (click)="this.save()">Salvar</button>
+        </div>
+    </form>
+</div>
