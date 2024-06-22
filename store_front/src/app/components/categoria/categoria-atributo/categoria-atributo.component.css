@@ -1,0 +1,15 @@
+.btn-item {
+    background-color: #0063a7ff;
+}
+
+.btn-item:hover {
+    transition: .2s;
+    background-color: #04345aff;
+}
+
+.list-group-item:hover {
+    transition: .2s;
+    background-color: #ff9900ff;
+    color: #fff;
+    cursor: pointer;
+}
