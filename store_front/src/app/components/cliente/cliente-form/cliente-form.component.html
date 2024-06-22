@@ -1,0 +1,19 @@
+<div class="col-xl-12 border py-5 px-3 vh-100 container-fluid p-0">
+    <h2 class="fw-bold ps-3 py-2">Módulo do Cliente</h2>
+    <form class="col-xl-12 px-3 mt-4 d-flex align-items-center flex-column row gy-2">
+        <div class="col-xl-6">
+            <label for="nome" class="fs-3 text-start d-block">Nome</label>
+            <input type="text" class="col-xl-12 rounded p-2 border" placeholder="Digite o nome do cliente" id="nome"
+                name="nome" [(ngModel)]="this.cliente.nome">
+        </div>
+        <div class="col-xl-6">
+            <label for="idade" class="fs-3 d-block">Idade</label>
+            <input type="text" class="col-xl-12 rounded p-2 border" placeholder="Digite a idade do cliente" id="idade"
+                name="idade" [(ngModel)]="this.cliente.idade">
+        </div>
+        <div class="col-xl-6 mt-3">
+            <button class="btn btn-lg btn-primary col-12" (click)="this.save()">
+                {{this.isEdicao ? 'salvar' : 'Cadastrar'}}</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+h2 {
+    color: #04345aff;
+    border-left: 1rem solid #ff9900ff;
+}
+
+.btn-filter, .btn-create {
+    background-color: #ff9900ff;
+}
+
+.btn-filter:hover, .btn-create:hover {
+    transition: .2s;
+    background-color: #c87145ff;
+}
+
+.btn-item {
+    background-color: #0063a7ff;
+}
+
+.btn-item:hover {
+    transition: .2s;
+    background-color: #04345aff;
+}
+
+.div-options {
+    position: relative;
+}
+
+.options {
+    position: absolute;
+    right: 0;
+}
+
+.div-table {
+    max-height: 25rem;
+}
