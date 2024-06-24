@@ -27,6 +27,7 @@ public class CaixaService {
     }
 
     public Caixa create(Caixa caixa) {
+        caixa.setNumero(this.gerarNumero());
         return this.repository.save(caixa);
     }
 
@@ -86,5 +87,16 @@ public class CaixaService {
 
         this.repository.deleteById(id);
         return true;
+    }
+
+    public Integer gerarNumero() {
+        List<Caixa> caixas = this.findAll();
+        Integer num = 1;
+
+        if(caixas.isEmpty()) {
+            return num;
+        }
+
+        return caixas.getLast().getNumero() + num;
     }
 }

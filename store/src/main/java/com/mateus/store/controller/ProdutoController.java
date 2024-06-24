@@ -50,7 +50,7 @@ public class ProdutoController {
         return new ResponseEntity<>(produto, HttpStatus.CREATED);
     }
 
-    @PutMapping("/alterar/{id}")
+    @PatchMapping("/alterar/{id}")
     public ResponseEntity<Produto> alter(@RequestBody Produto produtoParams, @PathVariable("id") UUID id) {
         Produto produto = this.service.alter(produtoParams, id);
         if(produto == null)

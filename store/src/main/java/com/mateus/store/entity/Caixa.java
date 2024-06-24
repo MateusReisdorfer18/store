@@ -22,8 +22,10 @@ public class Caixa {
     @Setter(AccessLevel.NONE)
     private UUID id;
 
+    private Integer numero;
+
     @NotNull
-    private Boolean status = true;
+    private Boolean status = false  ;
 
     @ManyToMany
     private List<Pedido> pedidos = new ArrayList<>();
