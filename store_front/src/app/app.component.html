@@ -13,12 +13,12 @@
       </span>
     </div>
   </header>
-  <main class="col-xl-12 d-flex">
+  <main class="col-xl-12 d-flex vh-100">
     <div class="main-nav col-xl-2">
       <nav class="p-3">
         <a class="btn text-light col-12 text-start fs-3 fw-bold nav-btn"
           (click)="this.toggleListCadastro()">Cadastros</a>
-        <ul class="list-group-flush"
+        <ul class="list-group-flush pt-1"
           *ngIf="this.showListCadastro">
           <li class="btn list-group-item d-flex align-items-center nav-li p-2 rounded">
             <span>
@@ -26,7 +26,7 @@
                 <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/>
               </svg>
             </span>
-            <a class="fs-4 text-light ps-2">Categoria</a>
+            <a class="fs-4 text-light ps-2" routerLink="/categoria/cadastrar">Categoria</a>
           </li>
           <li class="btn list-group-item d-flex align-items-center nav-li p-2 rounded">
             <span>
@@ -42,11 +42,15 @@
                 <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
               </svg>
             </span>
-            <a class="fs-4 text-light ps-2">Clientes</a>
+            <a class="fs-4 text-light ps-2"
+              routerLink="/cliente/cadastrar">Clientes</a>
           </li>
         </ul>
         <button class="btn text-light col-12 text-start fs-3 fw-bold nav-btn" routerLink="/produtos">Produtos</button>
-        <a class="btn text-light col-12 text-start fs-3 fw-bold nav-btn">Clientes</a>
+        <button class="btn text-light col-12 text-start fs-3 fw-bold nav-btn" routerLink="/clientes">Clientes</button>
+        <button class="btn text-light col-12 text-start fs-3 fw-bold nav-btn"
+          routerLink="/categorias">Categorias</button>
+        <button class="btn text-light col-12 text-start fs-3 fw-bold nav-btn" routerLink="/caixas">Caixa</button>
       </nav>
     </div>
     <div class="col-xl-10">

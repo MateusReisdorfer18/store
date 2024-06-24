@@ -4,23 +4,23 @@
         <ul class="list-group-flush col-xl-6 p-2 row gy-3">
             <li class="list-group-item border-bottom">
                 <h3 class="fw-bold">Identificador</h3>
-                <p class="fs-4">- {{produto.id}}</p>
+                <p class="fs-4">- {{caixa.id}}</p>
             </li>
             <li class="list-group-item border-bottom">
-                <h3 class="fw-bold">Nome</h3>
-                <p class="fs-4">- {{produto.nome}}</p>
+                <h3 class="fw-bold">Número</h3>
+                <p class="fs-4">- {{caixa.numero}}</p>
             </li>
             <li class="list-group-item border-bottom">
-                <h3 class="fw-bold">Preço</h3>
-                <p class="fs-4">- R$ {{produto.preco}}</p>
+                <h3 class="fw-bold">Data Fechamento</h3>
+                <p class="fs-4">- {{caixa.dataFechamento}}</p>
             </li>
             <li class="list-group-item border-bottom">
-                <h3 class="fw-bold">Quantidade Estoque</h3>
-                <p class="fs-4">- {{produto.quantidade}}</p>
+                <h3 class="fw-bold">Valor</h3>
+                <p class="fs-4">- R${{caixa.valor}}</p>
             </li>
             <li class="list-group-item border-bottom">
-                <h3 class="fw-bold">Categoria</h3>
-                <p class="fs-4">- {{produto.categoria?.nome}}</p>
+                <h3 class="fw-bold">Status</h3>
+                <p class="fs-4">- {{caixa.status}}</p>
             </li>
         </ul>
     </div>

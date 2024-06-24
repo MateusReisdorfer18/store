@@ -13,3 +13,12 @@
     color: #fff;
     cursor: pointer;
 }
+
+button:hover {
+    transition: .2s;
+    scale: 105%;
+}
+
+button:active {
+    scale: 100%;
+}

@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IProduto } from '../../interfaces/IProduto';
 import { Observable } from 'rxjs';
-import { ambients } from '../../../environment';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +24,7 @@ export class ProdutoService {
   }
 
   alter(produto: IProduto, id: String): Observable<IProduto> {
-    return this.http.post<IProduto>(`${this.URL}/produto/alterar/${id}`, produto);
+    return this.http.patch<IProduto>(`${this.URL}/produto/alterar/${id}`, produto);
   }
 
   delete(id: String): Observable<Boolean> {

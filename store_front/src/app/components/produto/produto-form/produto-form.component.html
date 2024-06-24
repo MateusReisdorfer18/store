@@ -26,7 +26,13 @@
         </div>
         <div class="col-xl-6 mt-3">
             <button class="btn btn-lg btn-primary col-12"
-                (click)="this.save()">Salvar</button>
+                *ngIf="!this.isEdicao"    
+                (click)="this.save()">Cadastrar</button>
+            <button class="btn btn-lg btn-primary col-12"
+                *ngIf="this.isEdicao"
+                (click)="this.save()">
+                Salvar
+            </button>
         </div>
     </form>
 </div>

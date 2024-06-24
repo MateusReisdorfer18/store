@@ -46,6 +46,7 @@ export class ProdutoFormComponent implements OnInit{
 
   save(): void {
     if(this.isEdicao) {
+      console.log(this.produto)
       this.produtoService.alter(this.produto, this.produto.id).subscribe(() => {
         this.router.navigate(['/produtos']);
       })
