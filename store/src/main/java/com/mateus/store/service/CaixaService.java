@@ -7,7 +7,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -48,22 +48,22 @@ public class CaixaService {
         return this.repository.save(caixa);
     }
 
-    public Boolean openCaixa(UUID id) {
+    public Caixa openCaixa(UUID id) {
         Caixa caixa = this.findById(id);
         if(caixa == null)
-            return false;
+            return null;
 
         this.repository.abrirCaixa(id);
-        return true;
+        return caixa;
     }
 
-    public Boolean closeCaixa(UUID id) {
+    public Caixa closeCaixa(UUID id) {
         Caixa caixa = this.findById(id);
         if(caixa == null)
-            return false;
+            return null;
 
-        this.repository.fecharCaixa(LocalDateTime.now() ,id);
-        return true;
+        this.repository.fecharCaixa(LocalDate.now() ,id);
+        return caixa;
     }
 
     public void addPedido(Pedido pedido, Caixa caixa) {
@@ -89,7 +89,7 @@ public class CaixaService {
         return true;
     }
 
-    public Integer gerarNumero() {
+    private Integer gerarNumero() {
         List<Caixa> caixas = this.findAll();
         Integer num = 1;
 

@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -20,6 +20,7 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Setter(AccessLevel.NONE)
     private UUID id;
+    private Integer numero;
 
     @NotNull
     @ManyToOne
@@ -29,7 +30,7 @@ public class Pedido {
     private List<Produto> produtos = new ArrayList<>();
 
     @NotNull
-    private LocalDateTime dataTransacao = LocalDateTime.now();
+    private LocalDate dataTransacao = LocalDate.now();
 
     private Double valorTotal = 0.0;
 }

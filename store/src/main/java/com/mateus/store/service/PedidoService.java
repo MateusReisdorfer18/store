@@ -48,14 +48,15 @@ public class PedidoService {
     }
 
     public Pedido create(Pedido pedido, UUID caixaId) {
-        for(Produto produto:pedido.getProdutos()) {
-            pedido.setValorTotal(pedido.getValorTotal() + produto.getPreco());
-        }
-
         Caixa caixaEncontrado = caixaService.findStatus(caixaId);
         if(caixaEncontrado == null)
             return null;
 
+        for(Produto produto:pedido.getProdutos()) {
+            pedido.setValorTotal(pedido.getValorTotal() + produto.getPreco());
+        }
+
+        pedido.setNumero(this.gerarNumero());
         this.repository.save(pedido);
         this.caixaService.addPedido(pedido, caixaEncontrado);
         return pedido;
@@ -77,5 +78,14 @@ public class PedidoService {
 
         this.repository.delete(pedido);
         return true;
+    }
+
+    private Integer gerarNumero() {
+        List<Pedido> pedidos = this.findAll();
+
+        if(pedidos.isEmpty())
+            return 1;
+
+        return pedidos.getLast().getNumero() + 1;
     }
 }

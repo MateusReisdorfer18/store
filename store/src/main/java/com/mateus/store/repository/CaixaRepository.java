@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Repository
@@ -20,5 +20,5 @@ public interface CaixaRepository extends JpaRepository<Caixa, UUID> {
     @Modifying
     @Transactional
     @Query("UPDATE Caixa c SET c.status = false, c.dataFechamento = ?1 WHERE c.id = ?2")
-    void fecharCaixa(LocalDateTime dataFechamento , UUID id);
+    void fecharCaixa(LocalDate dataFechamento , UUID id);
 }

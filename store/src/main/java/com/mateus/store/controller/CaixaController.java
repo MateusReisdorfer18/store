@@ -60,21 +60,21 @@ public class CaixaController {
     }
 
     @PatchMapping("/abrir-caixa/{id}")
-    public ResponseEntity<Boolean> openCaixa(@PathVariable("id") UUID id) {
-        Boolean returnOpenCaixa = this.service.openCaixa(id);
-        if(!returnOpenCaixa)
-            return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+    public ResponseEntity<Caixa> openCaixa(@PathVariable("id") UUID id) {
+        Caixa caixa = this.service.openCaixa(id);
+        if(caixa == null)
+            return ResponseEntity.notFound().build();
 
-        return new ResponseEntity<>(true, HttpStatus.OK);
+        return ResponseEntity.ok(caixa);
     }
 
     @PatchMapping("/fechar-caixa/{id}")
-    public ResponseEntity<Boolean> closeCaixa(@PathVariable("id") UUID id) {
-        Boolean returnCloseCaixa = this.service.closeCaixa(id);
-        if(!returnCloseCaixa)
-            return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+    public ResponseEntity<Caixa> closeCaixa(@PathVariable("id") UUID id) {
+        Caixa caixa = this.service.closeCaixa(id);
+        if(caixa == null)
+            return ResponseEntity.notFound().build();
 
-        return new ResponseEntity<>(true, HttpStatus.OK);
+        return ResponseEntity.ok(caixa);
     }
 
     @DeleteMapping("/excluir/{id}")
