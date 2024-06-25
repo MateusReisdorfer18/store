@@ -10,8 +10,10 @@ import { ClienteListaComponent } from './components/cliente/cliente-lista/client
 import { ClienteFormComponent } from './components/cliente/cliente-form/cliente-form.component';
 import { ClienteDetalheComponent } from './components/cliente/cliente-detalhe/cliente-detalhe.component';
 import { CaixaListaComponent } from './components/caixa/caixa-lista/caixa-lista.component';
-import { CaixaFormComponent } from './components/caixa/caixa-form/caixa-form.component';
 import { CaixaDetalheComponent } from './components/caixa/caixa-detalhe/caixa-detalhe.component';
+import { PedidosListaComponent } from './components/pedidos/pedidos-lista/pedidos-lista.component';
+import { PedidosFormComponent } from './components/pedidos/pedidos-form/pedidos-form.component';
+import { PedidosDetalheComponent } from './components/pedidos/pedidos-detalhe/pedidos-detalhe.component';
 
 const routes: Routes = [
   {path: "produtos", component: ProdutoListaComponent},
@@ -27,9 +29,11 @@ const routes: Routes = [
   {path: "cliente/alterar/:id", component: ClienteFormComponent},
   {path: "cliente/:id", component: ClienteDetalheComponent},
   {path: "caixas", component: CaixaListaComponent},
-  {path: "caixa/cadastrar", component: CaixaFormComponent},
-  {path: "caixa/alterar/:id", component: CaixaFormComponent},
   {path: "caixa/:id", component: CaixaDetalheComponent},
+  {path: "pedidos", component: PedidosListaComponent},
+  {path: "pedido/cadastrar", component: PedidosFormComponent},
+  {path: "pedido/alterar/:id", component: PedidosFormComponent},
+  {path: "pedido/:id", component: PedidosDetalheComponent},
   {path: "", redirectTo: "produtos", pathMatch: "full"}
 ];
 

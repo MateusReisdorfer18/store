@@ -2,20 +2,21 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ICategoria } from '../../interfaces/ICategoria';
 import { Observable } from 'rxjs';
+import { IService } from '../../interfaces/IService';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriaService {
+export class CategoriaService implements IService {
   private URL: string = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<ICategoria[]> {
+  findAll(): Observable<ICategoria[]> {
     return this.http.get<ICategoria[]>(`${this.URL}/categoria`);
   }
 
-  getById(id: string): Observable<ICategoria> {
+  findById(id: string): Observable<ICategoria> {
     return this.http.get<ICategoria>(`${this.URL}/categoria/${id}`);
   }
 
@@ -23,7 +24,7 @@ export class CategoriaService {
   return this.http.post<ICategoria>(`${this.URL}/categoria/cadastrar`, categoria);
   }
 
-  update(categoria: ICategoria, id: string): Observable<ICategoria> {
+  alter(categoria: ICategoria, id: string): Observable<ICategoria> {
     return this.http.put<ICategoria>(`${this.URL}/categoria/alterar/${id}`, categoria);
   }
 

@@ -1,0 +1,6 @@
+.div-produto:hover {
+    transition: .2s;
+    background-color: #ff9900ff;
+    color: #fff;
+    cursor: pointer;
+}

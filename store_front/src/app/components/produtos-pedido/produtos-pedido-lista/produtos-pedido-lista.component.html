@@ -1,0 +1,20 @@
+<ul class="list-group-flush">
+    <li class="list-group-item">
+        <h2>Produtos</h2>
+    </li>
+    <div *ngFor="let produto of this.pedido?.produtos" class="d-flex col-xl-12 border-bottom text-start px-3 py-2">
+        <li class="list-group-item col-xl-4">
+            <p class="fs-4">{{produto.nome}}</p>
+        </li>
+        <li class="list-group-item col-xl-4">
+            <p class="fs-4">{{produto.categoria?.nome}}</p>
+        </li>
+        <li class="list-group-item col-xl-4">
+            <p class="fs-4">R$ {{produto.preco.toFixed(2)}}</p>
+        </li>
+    </div>
+    <li class="list-group-item d-flex align-items-center justify-content-between">
+        <p class="fw-bold fs-4">Valor Total: </p>
+        <p class="fw-bold fs-4">R$ {{pedido?.valorTotal?.toFixed(2)}}</p>
+    </li>
+</ul>

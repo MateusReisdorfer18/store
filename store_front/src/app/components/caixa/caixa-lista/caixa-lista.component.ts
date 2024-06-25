@@ -17,7 +17,7 @@ export class CaixaListaComponent {
   }
 
   loadAll(): void {
-    this.caixaService.getAll().subscribe((caixas) => {
+    this.caixaService.findAll().subscribe((caixas) => {
       this.caixas = caixas;
     })
   }
@@ -30,7 +30,7 @@ export class CaixaListaComponent {
   }
 
   openCaixa(id: string): void {
-    this.caixaService.openCaixa(id).subscribe(() => {
+    this.caixaService.openCaixa(id).subscribe((caixa) => {
       this.loadAll();
     });
   }

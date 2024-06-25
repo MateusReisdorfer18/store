@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IProduto } from '../../interfaces/IProduto';
 import { Observable } from 'rxjs';
+import { IService } from '../../interfaces/IService';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProdutoService {
+export class ProdutoService implements IService {
   private URL: string = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }

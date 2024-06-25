@@ -1,0 +1,19 @@
+h2 {
+    color: #04345aff;
+    border-left: 1rem solid #ff9900ff;
+}
+
+.div-produto:hover {
+    transition: .2s;
+    background-color: #ff9900ff;
+    color: #fff;
+    cursor: pointer;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+app-produtos-pedido-form {
+    max-height: 20rem;
+}

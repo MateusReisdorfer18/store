@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ICaixa } from '../../interfaces/ICaixa';
 
 @Component({
@@ -6,13 +6,17 @@ import { ICaixa } from '../../interfaces/ICaixa';
   templateUrl: './caixa-atributo.component.html',
   styleUrl: './caixa-atributo.component.css'
 })
-export class CaixaAtributoComponent {
+export class CaixaAtributoComponent implements OnInit{
   @Input() caixa!: ICaixa
   @Output() onDelete = new EventEmitter();
   @Output() onOpenCaixa = new EventEmitter();
   @Output() onCloseCaixa = new EventEmitter();
 
   showOptions: boolean = false;
+
+  ngOnInit(): void {
+    this.caixa.valorTotal = Number(this.caixa.valorTotal.toFixed(2));
+  }
 
   openOptions(): void {
     this.showOptions = !this.showOptions;

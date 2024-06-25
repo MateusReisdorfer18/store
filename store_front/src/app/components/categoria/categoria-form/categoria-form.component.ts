@@ -27,7 +27,7 @@ export class CategoriaFormComponent implements OnInit{
     const id: string | null = this.route.snapshot.paramMap.get('id');
     if(id) {
       this.isEdicao = true;
-      this.categoriaService.getById(id).subscribe((categoria) => {
+      this.categoriaService.findById(id).subscribe((categoria) => {
         this.categoria = categoria;
       })
     }
@@ -35,7 +35,7 @@ export class CategoriaFormComponent implements OnInit{
 
   save(): void {
     if(this.isEdicao) {
-      this.categoriaService.update(this.categoria, this.categoria.id).subscribe(() => {
+      this.categoriaService.alter(this.categoria, this.categoria.id).subscribe(() => {
         this.router.navigate(["/categorias"]);
       })
       

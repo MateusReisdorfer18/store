@@ -1,0 +1,23 @@
+<ul class="list-group-flush">
+    <li class="list-group-item">
+        <h2>Pedidos</h2>
+    </li>
+    <div *ngFor="let pedido of this.caixa?.pedidos" class="d-flex col-xl-12 border-bottom text-start px-3 py-2">
+        <li class="list-group-item col-xl-3">
+            <p class="fs-4">{{pedido.numero}}</p>
+        </li>
+        <li class="list-group-item col-xl-3">
+            <p class="fs-4">{{pedido.caixa?.numero}}</p>
+        </li>
+        <li class="list-group-item col-xl-3">
+            <p class="fs-4">{{pedido.cliente?.nome}}</p>
+        </li>
+        <li class="list-group-item col-xl-3">
+            <p class="fs-4">R$ {{pedido.valorTotal?.toFixed(2)}}</p>
+        </li>
+    </div>
+    <li class="list-group-item d-flex align-items-center justify-content-between pt-3">
+        <p class="fw-bold fs-4">Valor Total: </p>
+        <p class="fw-bold fs-4">R$ {{caixa?.valorTotal?.toFixed(2)}}</p>
+    </li>
+</ul>

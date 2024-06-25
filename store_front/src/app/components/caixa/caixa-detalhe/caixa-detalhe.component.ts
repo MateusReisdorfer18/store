@@ -9,7 +9,7 @@ import { CaixaService } from '../../services/caixa/caixa.service';
   styleUrl: './caixa-detalhe.component.css'
 })
 export class CaixaDetalheComponent {
-  caixa!: ICaixa;
+  caixa?: ICaixa;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,7 +18,8 @@ export class CaixaDetalheComponent {
   ngOnInit(): void {
     const id: string | null = this.route.snapshot.paramMap.get('id'); 
     if(id) {
-      this.caixaService.getById(id).subscribe((caixa) => {
+      this.caixaService.findById(id).subscribe((caixa) => {
+        caixa.valorTotal = Number(caixa.valorTotal.toFixed(2));
         this.caixa = caixa;
       })
     }

@@ -18,9 +18,15 @@ import { ClienteFormComponent } from './components/cliente/cliente-form/cliente-
 import { ClienteDetalheComponent } from './components/cliente/cliente-detalhe/cliente-detalhe.component';
 import { ClienteAtributoComponent } from './components/cliente/cliente-atributo/cliente-atributo.component';
 import { CaixaListaComponent } from './components/caixa/caixa-lista/caixa-lista.component';
-import { CaixaFormComponent } from './components/caixa/caixa-form/caixa-form.component';
 import { CaixaAtributoComponent } from './components/caixa/caixa-atributo/caixa-atributo.component';
 import { CaixaDetalheComponent } from './components/caixa/caixa-detalhe/caixa-detalhe.component';
+import { PedidosListaComponent } from './components/pedidos/pedidos-lista/pedidos-lista.component';
+import { PedidosDetalheComponent } from './components/pedidos/pedidos-detalhe/pedidos-detalhe.component';
+import { PedidosAtributoComponent } from './components/pedidos/pedidos-atributo/pedidos-atributo.component';
+import { PedidosFormComponent } from './components/pedidos/pedidos-form/pedidos-form.component';
+import { ProdutosPedidoListaComponent } from './components/produtos-pedido/produtos-pedido-lista/produtos-pedido-lista.component';
+import { ProdutosPedidoFormComponent } from './components/produtos-pedido/produtos-pedido-form/produtos-pedido-form.component';
+import { CaixaPedidosListaComponent } from './components/caixa/caixa-pedidos-lista/caixa-pedidos-lista.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +44,15 @@ import { CaixaDetalheComponent } from './components/caixa/caixa-detalhe/caixa-de
     ClienteDetalheComponent,
     ClienteAtributoComponent,
     CaixaListaComponent,
-    CaixaFormComponent,
     CaixaAtributoComponent,
-    CaixaDetalheComponent
+    CaixaDetalheComponent,
+    PedidosListaComponent,
+    PedidosDetalheComponent,
+    PedidosAtributoComponent,
+    PedidosFormComponent,
+    ProdutosPedidoListaComponent,
+    ProdutosPedidoFormComponent,
+    CaixaPedidosListaComponent
   ],
   imports: [
     BrowserModule,

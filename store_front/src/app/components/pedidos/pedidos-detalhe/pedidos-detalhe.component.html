@@ -1,32 +1,32 @@
 <div class="col-xl-12 py-5 px-3 container-fluid">
-    <h2 class="fw-bold ps-3 py-2">Módulo do Caixa</h2>
+    <h2 class="fw-bold ps-3 py-2">Módulo de Pedido</h2>
     <div class="col-xl-12 d-flex align-items-center justify-content-around">
-        <div class="col-xl-4 p-3 d-flex flex-column align-items-center pt-5">
+        <div class="col-xl-6 p-3 d-flex flex-column align-items-center pt-5">
             <ul class="list-group-flush col-xl-6 p-2 row gy-3">
                 <li class="list-group-item border-bottom">
                     <h3 class="fw-bold">Identificador</h3>
-                    <p class="fs-4">- {{caixa?.id}}</p>
+                    <p class="fs-4">- {{pedido.id}}</p>
                 </li>
                 <li class="list-group-item border-bottom">
                     <h3 class="fw-bold">Número</h3>
-                    <p class="fs-4">- {{caixa?.numero}}</p>
+                    <p class="fs-4">- {{pedido.numero}}</p>
                 </li>
                 <li class="list-group-item border-bottom">
-                    <h3 class="fw-bold">Data Fechamento</h3>
-                    <p class="fs-4">- {{caixa?.dataFechamento}}</p>
+                    <h3 class="fw-bold">Cliente</h3>
+                    <p class="fs-4">- {{pedido.cliente?.nome}}</p>
+                </li>
+                <li class="list-group-item border-bottom">
+                    <h3 class="fw-bold">Data</h3>
+                    <p class="fs-4">- {{pedido.dataTransacao}}</p>
                 </li>
                 <li class="list-group-item border-bottom">
                     <h3 class="fw-bold">Valor</h3>
-                    <p class="fs-4">- R${{caixa?.valorTotal}}</p>
-                </li>
-                <li class="list-group-item border-bottom">
-                    <h3 class="fw-bold">Status</h3>
-                    <p class="fs-4">- {{caixa?.status}}</p>
+                    <p class="fs-4">- R$ {{pedido.valorTotal?.toFixed(2)}}</p>
                 </li>
             </ul>
         </div>
-        <div class="col-xl-6">
-            <app-caixa-pedidos-lista [caixa]="this.caixa"></app-caixa-pedidos-lista>
+        <div class="col-xl-4">
+            <app-produtos-pedido-lista [pedido]="this.pedido"></app-produtos-pedido-lista>
         </div>
     </div>
 </div>  

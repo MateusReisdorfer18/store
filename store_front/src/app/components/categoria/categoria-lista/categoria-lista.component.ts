@@ -17,8 +17,14 @@ export class CategoriaListaComponent implements OnInit{
   }
 
   findAll(): void {
-    this.categoriaService.getAll().subscribe((categorias) => {
+    this.categoriaService.findAll().subscribe((categorias) => {
       this.categorias = categorias;
+    })
+  }
+
+  delete(id: string): void {
+    this.categoriaService.delete(id).subscribe(() => {
+      this.findAll();
     })
   }
 }

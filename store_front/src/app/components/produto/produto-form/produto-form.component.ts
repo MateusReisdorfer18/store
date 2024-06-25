@@ -39,7 +39,7 @@ export class ProdutoFormComponent implements OnInit{
   }
 
   findAllCategorias(): void {
-    this.categoriaService.getAll().subscribe((categorias) => {
+    this.categoriaService.findAll().subscribe((categorias) => {
       this.categorias = categorias;
     })
   }

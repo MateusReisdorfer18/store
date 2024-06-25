@@ -1,0 +1,7 @@
+<div *ngFor="let produto of this.produtos"
+    class="div-produto d-flex align-items-center justify-content-between col-xl-12 border rounded pt-2 px-2 mb-2"
+    (click)="this.adicionarProduto(produto)">
+    <p class="fs-4 col-xl-4 text-start">{{ produto.nome }}</p>
+    <p class="fs-4 col-xl-4 text-start">{{ produto.categoria?.nome }}</p>
+    <p class="fs-4 col-xl-4 text-start">R$ {{ produto.preco.toFixed(2) }}</p>
+</div>

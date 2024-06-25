@@ -6,5 +6,5 @@ export interface ICaixa {
     status: boolean,
     pedidos?:IPedido[],
     dataFechamento?: Date,
-    valor: number
+    valorTotal: number
 }

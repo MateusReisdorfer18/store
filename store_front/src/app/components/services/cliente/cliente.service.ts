@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICliente } from '../../interfaces/ICliente';
+import { IService } from '../../interfaces/IService';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClienteService {
+export class ClienteService implements IService {
   apiUrl: string = 'http://localhost:8080/cliente'
 
   constructor(private http: HttpClient) { }

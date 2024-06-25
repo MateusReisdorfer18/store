@@ -3,7 +3,7 @@
         routerLink="/caixa/{{caixa.id}}">
         <p class="fs-5 col-2 text-start">{{ caixa.numero }}</p>
         <p class="fs-5 col-2 text-start">{{ caixa.dataFechamento || 'Inexistente' }}</p>
-        <p class="fs-5 col-2 text-start">R$ {{ caixa.valor || "0,00" }}</p>
+        <p class="fs-5 col-2 text-start">R$ {{ caixa.valorTotal}}</p>
         <p class="fs-5 col-2 text-start">{{ caixa.status }}</p>
     </div>
     <div class="fs-5 text col-xl-2 text-start d-flex justify-content-between div-option">
